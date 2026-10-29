@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1a1a1a">
+<title>TN machine — DeepSeek dark</title>
+<style>
+:root{
+  --bg:#1a1a1a; --card:#242424; --card2:#2e2e2e; --line:#3a3a3a;
+  --tx:#ececec; --mut:#8e8e8e;
+  --ac:#4d6bfe; --ac-dim:#3d5ce0;
+  --ok:#22c55e; --ok-bg:#123a24;
+  --bad:#ef4444; --bad-bg:#3b1418;
+  --warn:#f59e0b; --warn-bg:#3a2c08;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{
+  margin:0;background:var(--bg);color:var(--tx);
+  font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  padding:0 16px 48px;max-width:820px;margin:auto;
+  -webkit-font-smoothing:antialiased;
+}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0 12px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{
+  width:32px;height:32px;border-radius:9px;
+  background:linear-gradient(135deg,var(--ac),#7c5cff);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#fff;font-size:14px;
+  box-shadow:0 0 20px rgba(77,107,254,.35);
+}
+.brand h1{font-size:17px;margin:0;font-weight:700;letter-spacing:-.01em}
+.brand small{display:block;color:var(--mut);font-size:11px;font-weight:500;margin-top:-2px}
+.tag{
+  font-size:11px;font-weight:600;color:var(--ac);
+  background:rgba(77,107,254,.12);border:1px solid rgba(77,107,254,.3);
+  padding:3px 9px;border-radius:99px;
+}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);
+  display:flex;gap:6px;overflow-x:auto;padding:10px 0;
+  border-bottom:1px solid var(--line);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{
+  white-space:nowrap;text-decoration:none;color:var(--mut);
+  padding:6px 12px;border:1px solid var(--line);border-radius:99px;
+  font-size:13px;font-weight:500;transition:all .15s;
+}
+nav a:hover{color:var(--tx);border-color:var(--ac);background:rgba(77,107,254,.06)}
+h2{font-size:16px;margin:28px 0 10px;font-weight:700;letter-spacing:-.01em}
+h2::before{
+  content:'';display:inline-block;width:3px;height:14px;
+  background:var(--ac);border-radius:2px;vertical-align:-2px;margin-right:8px;
+}
+a{color:var(--ac);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.al{padding:10px 13px;border-radius:10px;margin:8px 0 0;font-size:13.5px;border:1px solid;line-height:1.5}
+.al.r{background:var(--bad-bg);border-color:#7f1d1d;color:#fca5a5}
+.al.y{background:var(--warn-bg);border-color:#854d0e;color:#fcd34d}
+.al.g{background:var(--ok-bg);border-color:#14532d;color:#86efac}
+.al small{color:var(--mut);opacity:.85;font-size:12px}
+
+button{
+  background:var(--ac);color:#fff;border:0;border-radius:9px;
+  padding:9px 16px;font-weight:600;font-size:14px;cursor:pointer;
+  transition:background .15s,transform .05s;
+}
+button:hover{background:var(--ac-dim)}
+button:active{transform:translateY(1px)}
+button:disabled{opacity:.5;cursor:not-allowed}
+
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin-bottom:12px}
+.bar label{font-size:11.5px;color:var(--mut);display:flex;flex-direction:column;gap:4px;font-weight:500}
+input{
+  width:98px;background:var(--card);border:1px solid var(--line);color:var(--tx);
+  border-radius:9px;padding:8px 10px;font-size:14px;font-family:inherit;
+  transition:border-color .15s;
+}
+input:focus{outline:none;border-color:var(--ac)}
+.seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.seg button{background:transparent;color:var(--mut);border-radius:0;padding:9px 14px;font-weight:500;font-size:13px}
+.seg button.on{background:var(--ac);color:#fff}
+
+#pg{height:3px;background:var(--line);border-radius:2px;overflow:hidden;margin:10px 0}
+#pg i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),#7c5cff);transition:width .3s}
+
+.c{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px;margin:10px 0;transition:border-color .15s}
+.c:hover{border-color:#4a4a4a}
+
+.t{display:flex;justify-content:space-between;align-items:center;font-size:16px;margin-bottom:8px;gap:8px}
+.t b{font-weight:700;letter-spacing:-.01em}
+.bd{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px;letter-spacing:.02em}
+.bd.L{background:var(--ok-bg);color:var(--ok)}
+.bd.S{background:var(--bad-bg);color:var(--bad)}
+.ch{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:99px;
+  border:1px solid var(--line);color:var(--mut);background:transparent}
+.ch.ok{color:var(--ok);border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.08)}
+.ch.bad{color:var(--bad);border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.08)}
+.ch.wait{color:var(--warn);border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.08)}
+
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0;font-size:14px}
+.g4 span{display:block;color:var(--mut);font-size:11px;font-weight:500;margin-bottom:3px;letter-spacing:.02em}
+.g4 > div{background:var(--card2);padding:8px 10px;border-radius:8px;font-variant-numeric:tabular-nums}
+
+.m{color:var(--mut);font-size:13px;line-height:1.5}
+.w{color:var(--warn);font-size:12.5px;background:var(--warn-bg);padding:7px 10px;border-radius:8px;margin-top:8px;border-left:3px solid var(--warn)}
+.flt-badge{display:inline-block;font-size:11.5px;background:rgba(239,68,68,.1);color:var(--bad);
+  border:1px solid rgba(239,68,68,.3);padding:2px 8px;border-radius:6px;margin-top:6px}
+
+.sz{margin-top:10px;padding:9px 12px;background:var(--card2);border-radius:9px;font-size:13px;
+  border-left:3px solid var(--ac);font-variant-numeric:tabular-nums}
+
+.sc{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13px;background:var(--card)}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{color:var(--mut);font-weight:600;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;background:var(--card2)}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:rgba(77,107,254,.04)}
+.TP{color:var(--ok);font-weight:600}
+.SL{color:var(--bad);font-weight:600}
+.kedaluwarsa{color:var(--warn)}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px 16px;margin-top:28px}
+summary{cursor:pointer;font-weight:700;font-size:15px}
+summary:hover{color:var(--ac)}
+details[open] summary{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+li{margin:6px 0;font-size:13.5px;color:#c9c9c9;line-height:1.55}
+.c details{margin-top:10px;padding:8px 12px;background:var(--card2)}
+.c details summary{font-size:13px;font-weight:600;color:var(--mut)}
+
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px;border-radius:4px}
+svg text{font:10px system-ui;fill:var(--mut)}
+
+#fw{border-left:3px solid var(--ac)}
+.badge-status{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600}
+.badge-status::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--ac);box-shadow:0 0 8px var(--ac)}
+
+@media(max-width:480px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  body{padding:0 12px 32px}
+  header{padding:14px 0 10px}
+  .brand h1{font-size:15px}
+}
+</style></head><body>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">T</div>
+    <div><h1>TN machine</h1><small>DeepSeek dark · v2</small></div>
+  </div>
+  <span class="tag">LIVE</span>
+</header>
+
+<nav>
+  <a href="#gate">Gerbang BTC</a>
+  <a href="#dom">Dominasi</a>
+  <a href="#sig">Sinyal</a>
+  <a href="#watch">Pantauan</a>
+  <a href="#jr">Jurnal</a>
+  <a href="#kartu">Strategi</a>
+</nav>
+
+<div id="al"></div>
+
+<h2 id="gate">Gerbang BTC</h2>
+<div id="gt" class="c m">Memuat…</div>
+
+<h2 id="dom">Dominasi BTC & musim altcoin</h2>
+<div id="dm" class="c m">Menunggu scan…</div>
+
+<h2 id="sig">Sinyal setup</h2>
+<div class="bar">
+  <label>Modal ($)<input id="cap" type="number" min="0"></label>
+  <label>Risiko/trade (%)<input id="rk" type="number" step=".1" min="0"></label>
+  <div class="seg" id="flt">
+    <button data-f="all" class="on">Semua</button>
+    <button data-f="1">Long</button>
+    <button data-f="-1">Short</button>
+  </div>
+  <button id="go">Scan ulang</button>
+</div>
+<div id="pg"><i></i></div>
+<p id="st" class="m"></p>
+<div id="out"></div>
+
+<h2 id="watch">Pantauan 40 koin</h2>
+<div class="sc"><table id="wt"><tr><td class="m">Menunggu scan…</td></tr></table></div>
+<p class="m">Ketuk baris koin untuk melihat grafiknya.</p>
+<div id="wc"></div>
+
+<h2 id="jr">Jurnal sinyal</h2>
+<div id="stats" class="g4"></div>
+<div id="fw" class="c m" style="display:none"></div>
+<div class="sc"><table id="jt"><tr><td class="m">Memuat jurnal…</td></tr></table></div>
+
+<details id="kartu"><summary>Kartu strategi CryptoEliz</summary>
+<p class="m">V = disebut langsung di video/tweet. I = interpretasi ke kode.</p><ul>
+<li><b>V</b>: Ikuti tren makro (weekly/3 hari). Tren naik cari long, short hanya dengan deviasi. (EMA20/50 weekly, I)</li>
+<li><b>V</b>: BTC jadi gerbang. Long altcoin saat BTC turun diberi peringatan.</li>
+<li><b>V</b>: Trading di range high/low, hindari mid-range. (range 60 hari, I)</li>
+<li><b>V</b>: Entry limit di retest setelah breakout ber-close, atau deviasi lalu recovery. SL di bawah/atas wick deviasi.</li>
+<li><b>V</b>: Fibonacci 0.75 sebagai zona koreksi tren.</li>
+<li><b>V</b>: OBV dan RSI divergence sebagai konfirmasi.</li>
+<li><b>V</b>: SL ketat: scalping 3–5%, swing 10–15%. SL lebih lebar ditolak. (minimum 3%, I)</li>
+<li><b>V</b>: Hindari trading saat penutupan bulanan, libur bervolume tipis, Monday range masih terbentuk.</li>
+<li><b>V</b>: Monday Low/High adalah level kunci mingguan. (dari candle harian Senin, I)</li>
+<li><b>V</b>: Retest langsung di zona kuat (2+ sentuhan, searah tren) boleh tanpa menunggu deviasi.</li>
+<li><b>V</b>: Three Tap/Top, Wolf, Double Deviation. (deteksi pivot & trendline, I)</li>
+<li><b>v2</b>: Counter-trend wajib divergence · Monday freshness ≤3 hari · Volume reclaim ≥1.2× avg20 · Staleness entry ≤3% · SL ≤8% saat trending · Order limit cancel >72 jam.</li>
+</ul></details>
+
+<script type="module">
+import {bj,kl,NOT,feat,alertList,conf,scanInput} from './core.mjs';
+const $=s=>document.querySelector(s),SD=['turun','netral','naik'];
+const f=v=>v>=100?v.toFixed(1):v>=1?v.toFixed(3):v.toPrecision(3);
+const ld=k=>{try{return localStorage.getItem(k)}catch(e){return null}},sv=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+let res=[],all=[],btc=null,flt='all',extra=[];
+$('#cap').value=ld('cap')||1000;
+$('#rk').value=ld('rk')||1;
+
+function showAl(){
+  const A=[...alertList(),...extra];
+  $('#al').innerHTML=A.map(a=>`<div class="al ${a[0]}">${a[1]} <small>${a[2]||''}</small></div>`).join('')
+    ||'<div class="al g">Tidak ada alert tanggal hari ini.</div>';
+}
+const tw=r=>r.m>=55?SD[r.tw+1]:'n/a';
+
+// PATCH D: alasan filter untuk watchlist
+function filterReason(r){
+  if(r.side) return '-';
+  if(r.flat) return 'range datar (<6%)';
+  if(r.mid) return 'mid-range (30–70%)';
+  if(r.tr===-1 && (r.devUp||r.mDevUp||r.ddUp||r.wUp) && !(r.obvDiv===1||r.rsiDiv===1)) return 'LONG di downtrend tanpa divergence';
+  if(r.tr===1 && (r.devDn||r.mDevDn||r.ddDn||r.wDn) && !(r.obvDiv===-1||r.rsiDiv===-1)) return 'SHORT di uptrend tanpa divergence';
+  if(r.dist>3) return 'entry basi (>3% dari harga)';
+  if(r.pos<.2) return 'dekat range low — tunggu deviasi/retest';
+  if(r.pos>.8) return 'dekat range high — tunggu breakout-retest';
+  return 'tidak ada pemicu';
+}
+
+function card(r){
+  const cap=+$('#cap').value||0,rk=+$('#rk').value||0,rs=cap*rk/100,
+    q=rs/Math.abs(r.entry-r.sl),nt=q*r.entry,lev=cap?nt/cap:0;
+  const s=r.dist<=1.5?['AKTIF','ok']:r.dist<=6?['MENUNGGU RETEST','wait']:['JAUH',''];
+  const stale = r.dist>3 ? '<span class="flt-badge">⚠ entry basi</span>' : '';
+  return `<div class="c">
+    <div class="t">
+      <b>${r.s}</b>
+      <span><span class="bd ${r.side==1?'L':'S'}">${r.side==1?'LONG':'SHORT'}</span>
+      <span class="ch ${s[1]}">${s[0]}</span></span>
+    </div>
+    ${stale}
+    <div class="g4">
+      <div><span>Entry limit</span>${f(r.entry)}</div>
+      <div><span>SL ${r.slp.toFixed(1)}%</span>${f(r.sl)}</div>
+      <div><span>TP 2R</span>${f(r.tp)}</div>
+      <div><span>Target range</span>${f(r.t2)}</div>
+    </div>
+    <div class="m">Harga ${f(r.px)} · jarak ke entry ${r.dist.toFixed(1)}% · ${r.type}</div>
+    <div class="m">4H/12H: ${r.cf?`<span class="ch ${r.cf[0]}">${r.cf[1]}</span>`:'memuat…'}</div>
+    <div class="m">Tren W ${tw(r)} · D ${SD[r.td+1]} · ${r.why.join(' · ')}</div>
+    ${r.w.length?`<div class="w">${r.w.join(' · ')}</div>`:''}
+    <div class="sz">Risiko $${rs.toFixed(0)}: qty ${q>=100?q.toFixed(0):q.toPrecision(3)} ${r.s} (≈$${nt.toFixed(0)}${lev>1.05?`, leverage ${lev.toFixed(1)}×`:''})</div>
+    <details><summary>Grafik 90 hari</summary>${chart(r)}</details>
+  </div>`;
+}
+function render(){
+  const L=res.filter(r=>flt=='all'||r.side==flt);
+  $('#out').innerHTML=L.map(card).join('')
+    ||'<p class="m">Tidak ada setup yang lolos aturan v2. Diam juga posisi.</p>';
+}
+function gate(){
+  const b=btc,t=b.tr;
+  const bias=b.mid?'BTC di mid-range: kurangi aktivitas, tunggu tepi range.'
+    :t==1?(b.pos<.4?'Tren naik dan dekat support: cari long.':'Tren naik: utamakan long, short hanya dengan deviasi.')
+    :t==-1?'Tren turun: utamakan short atau diam, long hanya dengan deviasi.'
+    :'Tren netral: kurangi ukuran posisi.';
+  $('#gt').className='c';
+  $('#gt').innerHTML=`<div class="g4">
+    <div><span>Harga BTC</span>${f(b.px)}</div>
+    <div><span>Tren weekly</span>${tw(b)}</div>
+    <div><span>Tren daily</span>${SD[b.td+1]}</div>
+    <div><span>Posisi range</span>${Math.round(b.pos*100)}%</div>
+  </div>
+  <div class="m">${bias}${b.flip?' Tren weekly baru berbalik dalam 3 minggu terakhir.':''}</div>
+  <div class="m" style="margin-top:8px">Level weekly (26 minggu): support ${f(b.wlow)} · resistance ${f(b.whigh)}.</div>
+  <div style="margin-top:10px">${chart(b)}</div>`;
+}
+
+function watch(){
+  all.sort((a,b)=>Math.min(a.pos,1-a.pos)-Math.min(b.pos,1-b.pos));
+  $('#wt').innerHTML='<tr><th>Koin</th><th>Weekly</th><th>Daily</th><th>Range</th><th>Pola</th><th>Alasan filter</th></tr>'
+    +all.map(r=>`<tr data-s="${r.s}" style="cursor:pointer">
+      <td>${r.s}</td><td>${tw(r)}</td><td>${SD[r.td+1]}</td>
+      <td>${Math.round(r.pos*100)}%</td>
+      <td>${r.tags.join(', ')||'-'}</td>
+      <td style="color:${r.side?'#22c55e':'#8e8e8e'};font-size:12px">${filterReason(r)}</td>
+    </tr>`).join('');
+}
+function chart(r){
+  const k=r.k,W=640,Hh=230,n=k.length,bw=W/n,P=14,
+    L=[[r.H,'range high','#8aa0b8'],[r.L,'range low','#8aa0b8']];
+  if(r.monL)L.push([r.monL,'Monday low','#a78bfa'],[r.monH,'Monday high','#a78bfa']);
+  if(r.entry)L.push([r.entry,'entry','#4d6bfe'],[r.sl,'SL','#ef4444'],[r.tp,'TP','#22c55e']);
+  const mx=Math.max(...k.map(q=>q.h),...L.map(a=>a[0])),
+    mn=Math.min(...k.map(q=>q.l),...L.map(a=>a[0])),
+    y=v=>(P+(mx-v)/(mx-mn)*(Hh-2*P)).toFixed(1);
+  let s=`<svg viewBox="0 0 ${W} ${Hh}" width="100%" role="img" aria-label="Grafik harian ${r.s}" style="background:#1a1a1a;border-radius:8px;border:1px solid #2e2e2e">`;
+  for(const[z,c]of[[r.zs,'#22c55e'],[r.zr,'#ef4444']])
+    if(z)s+=`<rect x="0" y="${y(z.b)}" width="${W}" height="${Math.max(2,y(z.a)-y(z.b))}" fill="${c}" opacity=".1"/>`;
+  k.forEach((q,i)=>{
+    const x=(i*bw+bw/2).toFixed(1),c=q.c>=q.o?'#22c55e':'#ef4444';
+    s+=`<line x1="${x}" x2="${x}" y1="${y(q.h)}" y2="${y(q.l)}" stroke="${c}" opacity=".85"/>`
+      +`<rect x="${(x-bw*.35).toFixed(1)}" y="${y(Math.max(q.o,q.c))}" width="${(bw*.7).toFixed(1)}" height="${Math.max(1,Math.abs(y(q.o)-y(q.c)))}" fill="${c}"/>`;
+  });
+  for(const[v,t,c]of L)
+    s+=`<line x1="0" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="${c}" stroke-dasharray="4 3" opacity=".6"/>`
+      +`<text x="4" y="${y(v)-3}" fill="${c}">${t} ${f(v)}</text>`;
+  if(r.tl){
+    const a=Math.max(r.tl.a,r.off),v=i=>r.tl.av+r.tl.sl*(i-r.tl.a);
+    s+=`<line x1="${((a-r.off+.5)*bw).toFixed(1)}" y1="${y(v(a))}" x2="${((r.tl.e-r.off+.5)*bw).toFixed(1)}" y2="${y(v(r.tl.e))}" stroke="#f59e0b" stroke-width="2"/>`;
+  }
+  return s+'</svg>';
+}
+
+async function dom(){
+  let g=null,H=[],eb=null;
+  try{g=(await (await fetch('https://api.coingecko.com/api/v3/global',{signal:AbortSignal.timeout(10000)})).json()).data.market_cap_percentage}catch(e){}
+  try{H=await (await fetch('data/dominance.json')).json()}catch(e){}
+  try{const s=scanInput(await kl('ETHBTC'));eb=feat(s.bars,s.qv)}catch(e){}
+  const al=all.filter(r=>r.s!=='ETH'&&r.s!=='BTC'),
+    br=al.length?Math.round(al.filter(r=>r.ret30>btc.ret30).length/al.length*100):null;
+  const d7=new Date(Date.now()-7*864e5).toISOString().slice(0,10),
+    p=H.filter(x=>x.d<=d7).at(-1);
+  const v=eb&&eb.tr==1&&br>=50?'Mengarah ke musim altcoin: ETH/BTC naik dan mayoritas altcoin mengungguli BTC.'
+    :eb&&eb.tr==-1&&br<40?'BTC dominan: altcoin tertinggal. Pilih altcoin hanya dengan setup kuat.'
+    :'Campuran: belum musim altcoin penuh.';
+  $('#dm').className='c';
+  $('#dm').innerHTML=`<div class="g4">
+    <div><span>Dominasi BTC</span>${g?g.btc.toFixed(1)+'%':'n/a'}</div>
+    <div><span>Dominasi ETH</span>${g?g.eth.toFixed(1)+'%':'n/a'}</div>
+    <div><span>ETH/BTC (W/D)</span>${eb?tw(eb)+' / '+SD[eb.td+1]:'n/a'}</div>
+    <div><span>Altcoin > BTC (30d)</span>${br==null?'n/a':br+'%'}</div>
+  </div>
+  <div class="m">${v} (interpretasi)</div>
+  <div class="m" style="margin-top:6px">${g&&p?`Dominasi BTC 7 hari: ${g.btc-p.btc>=0?'+':''}${(g.btc-p.btc).toFixed(1)} poin.`:''}</div>`;
+}
+
+async function go(){
+  const b=$('#go');b.disabled=true;res=[];all=[];extra=[];
+  $('#out').innerHTML='';$('#pg i').style.width='3%';
+  try{
+    $('#st').textContent='Mengambil daftar koin…';
+    const t=await bj('ticker/24hr'),
+      top=t.filter(x=>x.symbol
