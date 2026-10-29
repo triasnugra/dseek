@@ -1,0 +1,48 @@
+name: Riset varian CryptoEliz (uji terkunci)
+on:
+  workflow_dispatch:
+    inputs:
+      split:
+        description: "Tanggal pemisah YYYY-MM-DD"
+        default: "2025-07-01"
+        required: true
+permissions:
+  contents: write
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - uses: actions/cache@v4
+        with:
+          path: backtest/cache
+          key: bt-cache-${{ github.run_id }}
+          restore-keys: bt-cache-
+      - name: 1. Uji otomatis
+        run: node scripts/test-backtest.mjs
+      - name: 1b. Uji forward test
+        run: node scripts/test-forward.mjs
+      - name: 2. Riset 16 varian
+        run: node scripts/research.mjs --split "${{ inputs.split }}"
+      - name: 3. Unggah hasil
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Riset-CryptoEliz
+          path: backtest/out/
+          retention-days: 90
+      - name: 4. Simpan ringkasan ke repo
+        if: success()
+        run: |
+          mkdir -p data/reports
+          STAMP=$(date -u +%Y-%m-%d_%H%M)
+          cp backtest/out/research.md data/reports/riset-${STAMP}.md
+          cp backtest/out/research.json data/reports/riset-${STAMP}.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/reports
+          git commit -m "riset: ringkasan ${STAMP} [skip ci]"
+          git push || (git pull --rebase && git push)
