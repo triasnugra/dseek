@@ -355,4 +355,81 @@ async function go(){
   try{
     $('#st').textContent='Mengambil daftar koin…';
     const t=await bj('ticker/24hr'),
-      top=t.filter(x=>x.symbol
+      top=t.filter(x=>x.symbol.endsWith('USDT')&&!NOT.test(x.symbol.slice(0,-4)))
+        .sort((a,b)=>b.quoteVolume-a.quoteVolume).slice(0,40);
+    const bk=await kl('BTCUSDT'),bs=scanInput(bk);
+    btc=feat(bs.bars,bs.qv);btc.s='BTC';gate();
+    const v=bk.slice(-22,-2).map(q=>q.v),avg=v.reduce((a,b)=>a+b,0)/v.length;
+    if(bk.at(-2).v<.6*avg)extra.push(['y','Volume BTC kemarin di bawah 60% rata-rata 20 hari.','Volume tipis']);
+    if(btc.mid)extra.push(['y','BTC di mid-range. Eliz memilih diam saat ragu.','Interpretasi']);
+    showAl();
+    for(let i=0;i<top.length;i+=8){
+      $('#st').textContent=`Memindai ${Math.min(i+8,40)}/40…`;
+      $('#pg i').style.width=(10+Math.min(i+8,40)/40*90)+'%';
+      await Promise.all(top.slice(i,i+8).map(async x=>{
+        try{
+          const sc=scanInput(await kl(x.symbol)),r=feat(sc.bars,sc.qv);r.s=x.symbol.slice(0,-4);
+          all.push(r);
+          if(r.side&&r.type!='ditolak'){
+            r.w=[];
+            if(r.qv<2e7)r.w.push('volume tipis, OBV tidak andal');
+            if(r.type.startsWith('spot'))r.w.push('SL lebar: hanya untuk spot tanpa leverage');
+            if(r.side==1&&btc.tr==-1)r.w.push('melawan tren BTC');
+            res.push(r);
+          }
+        }catch(e){}
+      }));
+    }
+    res.sort((a,b)=>b.why.length-a.why.length||a.dist-b.dist);
+    render();watch();
+    await Promise.all(res.map(async r=>{
+      try{r.cf=await conf(r)}catch(e){r.cf=['','tidak tersedia']}
+    }));
+    render();
+    try{await dom()}catch(e){}
+    $('#st').textContent=`Selesai: ${res.length} setup, ${all.length} koin dipantau.`;
+  }catch(e){
+    $('#st').textContent='Server Binance tidak terjangkau ('+(e&&e.name==='TimeoutError'?'timeout':e&&e.message)+').';
+  }
+  $('#pg i').style.width='100%';b.disabled=false;
+}
+$('#go').onclick=go;
+$('#wt').onclick=e=>{
+  const t=e.target.closest('tr[data-s]');if(!t)return;
+  const r=all.find(x=>x.s===t.dataset.s);
+  $('#wc').innerHTML=`<div class="c"><b>${r.s}</b> <span class="m">${r.tags.join(', ')}</span><br><span class="m">${filterReason(r)}</span>${chart(r)}</div>`;
+};
+$('#flt').onclick=e=>{
+  const x=e.target.closest('button');if(!x)return;
+  flt=x.dataset.f;[...$('#flt').children].forEach(c=>c.classList.toggle('on',c==x));
+  render();
+};
+['cap','rk'].forEach(id=>$('#'+id).oninput=e=>{sv(id,e.target.value);render()});
+
+fetch('data/journal.json').then(r=>r.json()).then(j=>{
+  const J=j.filter(r=>r.agen==='Aturan Eliz').reverse(),
+    cl=J.filter(r=>['TP','SL','kedaluwarsa'].includes(r.hasil)),
+    W=J.filter(r=>r.hasil==='TP').length,
+    Ls=J.filter(r=>r.hasil==='SL').length,
+    Rs=cl.map(r=>+r.R).filter(Number.isFinite),
+    sum=Rs.reduce((a,b)=>a+b,0);
+  $('#stats').innerHTML=[['Sinyal',J.length],['Win rate',W+Ls?Math.round(W/(W+Ls)*100)+'%':'-'],['Rata-rata R',Rs.length?(sum/Rs.length).toFixed(2):'-'],['Total R',Rs.length?sum.toFixed(1):'-']]
+    .map(a=>`<div style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px"><span class="m">${a[0]}</span><br><b style="font-size:18px">${a[1]}</b></div>`).join('');
+  const H=['waktu','aset','arah','entry','sl','tp','hasil','R','alasan'];
+  $('#jt').innerHTML='<tr>'+H.map(h=>`<th>${h}</th>`).join('')+'</tr>'
+    +(J.map(r=>'<tr>'+H.map(h=>`<td class="${h=='hasil'?r.hasil:''}">${r[h]??''}</td>`).join('')+'</tr>').join('')||'<tr><td class="m">Belum ada sinyal.</td></tr>');
+}).catch(()=>{$('#jt').innerHTML='<tr><td class="m">Belum ada data jurnal.</td></tr>'});
+
+fetch('data/forward-report.json').then(r=>r.json()).then(a=>{
+  const p=a.progress,c=a.counts,e=$('#fw');e.style.display='';
+  const v=a.ready&&a.verdict?(a.verdict.pass?'LULUS':'TIDAK LULUS'):'';
+  e.innerHTML=`<b>Forward test</b> <span class="m">(mulai ${String(a.protocol.mulai).slice(0,10)})</span><br>
+    Trade terisi <b>${p.trade_terisi[0]}</b>/${p.trade_terisi[1]} · minggu <b>${p.minggu[0]}</b>/${p.minggu[1]} · menunggu ${c.menunggu}
+    ${a.chain.ok?'':' · <span style="color:var(--bad)">⚠ JURNAL DIEDIT</span>'}<br>
+    ${a.ready?'Evaluasi: <b>'+v+'</b>':'<span class="m">Angka kinerja disembunyikan sampai syarat terpenuhi.</span>'}`;
+}).catch(()=>{});
+
+showAl();
+go();
+</script>
+</body></html>
