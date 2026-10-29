@@ -1,0 +1,17 @@
+{
+  "name": "tn-machine",
+  "version": "2.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Mesin 2 (tn) — CryptoEliz rules engine, forward-tested",
+  "scripts": {
+    "backtest": "node scripts/backtest.mjs",
+    "research": "node scripts/research.mjs",
+    "test:backtest": "node scripts/test-backtest.mjs",
+    "test:forward": "node scripts/test-forward.mjs",
+    "forward:report": "node scripts/forward.mjs report",
+    "forward:verify": "node scripts/forward.mjs verify",
+    "forward:regrade": "node scripts/forward.mjs verify --regrade"
+  },
+  "engines": { "node": ">=20" }
+}
