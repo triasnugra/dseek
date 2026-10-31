@@ -1,1 +1,25 @@
-[]
+[
+ {
+  "id": "2026-10-31|Aturan Eliz|MUB",
+  "waktu": "2026-10-31 03:18 UTC",
+  "t": 1793416709240,
+  "due": 1794021509240,
+  "agen": "Aturan Eliz",
+  "aset": "MUB",
+  "arah": "LONG",
+  "entry": 870.85,
+  "sl": 844.72,
+  "tp": 923.1,
+  "harga_awal": 890.93,
+  "keyakinan": "",
+  "alasan": "sweep Monday Low lalu reclaim, Wolf bullish: breakdown trendline gagal, OBV divergence, RSI divergence",
+  "alert": "Hari terakhir bulan. Penutupan bulanan 00:00 UTC.",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 1,
+  "prev": "GENESIS",
+  "h": "0247f1a477573ec9d577"
+ }
+]
