@@ -14,12 +14,25 @@
   "keyakinan": "",
   "alasan": "sweep Monday Low lalu reclaim, Wolf bullish: breakdown trendline gagal, OBV divergence, RSI divergence",
   "alert": "Hari terakhir bulan. Penutupan bulanan 00:00 UTC.",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "SL",
+  "R": -1,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 1,
   "prev": "GENESIS",
-  "h": "0247f1a477573ec9d577"
+  "h": "0247f1a477573ec9d577",
+  "tx": 1793642400000,
+  "bm": {
+   "e": 900.03,
+   "h": "SL",
+   "R": -1,
+   "tx": 1793628000000
+  },
+  "bi": {
+   "e": 900.03,
+   "h": "TP",
+   "R": 2,
+   "tx": 1793638800000
+  }
  }
 ]
