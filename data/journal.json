@@ -50,13 +50,14 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, Wolf: breakout trendline gagal, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "SL",
+  "R": -1,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 2,
   "prev": "0247f1a477573ec9d577",
-  "h": "de1f804dd93a2124c6fa"
+  "h": "de1f804dd93a2124c6fa",
+  "tx": 1793804400000
  },
  {
   "id": "2026-11-03|Aturan Eliz|SPCXB",
