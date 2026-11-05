@@ -74,13 +74,26 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "TP",
+  "R": 2,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 3,
   "prev": "de1f804dd93a2124c6fa",
-  "h": "aebd434f581d74676d15"
+  "h": "aebd434f581d74676d15",
+  "tx": 1793890800000,
+  "bm": {
+   "e": 137.49,
+   "h": "TP",
+   "R": 2,
+   "tx": 1793890800000
+  },
+  "bi": {
+   "e": 137.49,
+   "h": "SL",
+   "R": -1,
+   "tx": 1793793600000
+  }
  },
  {
   "id": "2026-11-03|Aturan Eliz|XAUT",
@@ -121,12 +134,25 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "TP",
+  "R": 2,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 5,
   "prev": "7f58a8094689ab4e1008",
-  "h": "6e21980b6bd99b974c3c"
+  "h": "6e21980b6bd99b974c3c",
+  "tx": 1793887200000,
+  "bm": {
+   "e": 204,
+   "h": "TP",
+   "R": 2,
+   "tx": 1793890800000
+  },
+  "bi": {
+   "e": 204,
+   "h": "SL",
+   "R": -1,
+   "tx": 1793887200000
+  }
  }
 ]
