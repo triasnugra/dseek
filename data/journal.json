@@ -97,13 +97,14 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "SL",
+  "R": -1,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 4,
   "prev": "aebd434f581d74676d15",
-  "h": "7f58a8094689ab4e1008"
+  "h": "7f58a8094689ab4e1008",
+  "tx": 1793840400000
  },
  {
   "id": "2026-11-03|Aturan Eliz|NVDAB",
