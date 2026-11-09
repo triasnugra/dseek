@@ -182,12 +182,13 @@
   "keyakinan": "",
   "alasan": "Wolf: breakout trendline gagal, searah tren",
   "alert": "Senin: Monday range sedang terbentuk, harga cenderung kotor. Tunggu. Monday Low/High jadi level kunci minggu ini.",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "SL",
+  "R": -1,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 6,
   "prev": "6e21980b6bd99b974c3c",
-  "h": "8a12bb9445a1a7eff138"
+  "h": "8a12bb9445a1a7eff138",
+  "tx": 1794189600000
  }
 ]
