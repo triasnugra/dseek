@@ -57,7 +57,19 @@
   "seq": 2,
   "prev": "0247f1a477573ec9d577",
   "h": "de1f804dd93a2124c6fa",
-  "tx": 1793804400000
+  "tx": 1793804400000,
+  "bm": {
+   "e": 2253.07,
+   "h": "SL",
+   "R": -1,
+   "tx": 1793800800000
+  },
+  "bi": {
+   "e": 2253.07,
+   "h": "SL",
+   "R": -1,
+   "tx": 1794171600000
+  }
  },
  {
   "id": "2026-11-03|Aturan Eliz|SPCXB",
@@ -154,5 +166,28 @@
    "R": -1,
    "tx": 1793887200000
   }
+ },
+ {
+  "id": "2026-11-09|Aturan Eliz|ARB",
+  "waktu": "2026-11-09 01:19 UTC",
+  "t": 1794187161464,
+  "due": 1794791961464,
+  "agen": "Aturan Eliz",
+  "aset": "ARB",
+  "arah": "SHORT",
+  "entry": 0.16814,
+  "sl": 0.17336,
+  "tp": 0.1577,
+  "harga_awal": 0.1661,
+  "keyakinan": "",
+  "alasan": "Wolf: breakout trendline gagal, searah tren",
+  "alert": "Senin: Monday range sedang terbentuk, harga cenderung kotor. Tunggu. Monday Low/High jadi level kunci minggu ini.",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 6,
+  "prev": "6e21980b6bd99b974c3c",
+  "h": "8a12bb9445a1a7eff138"
  }
 ]
