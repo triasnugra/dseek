@@ -266,13 +266,26 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "TP",
+  "R": 2,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 8,
   "prev": "f19a6326f02630a4ec3f",
-  "h": "be8e64bb3cca108c8482"
+  "h": "be8e64bb3cca108c8482",
+  "tx": 1794686400000,
+  "bm": {
+   "e": 0.176,
+   "h": "TP",
+   "R": 2,
+   "tx": 1794686400000
+  },
+  "bi": {
+   "e": 0.176,
+   "h": "SL",
+   "R": -1,
+   "tx": 1794621600000
+  }
  },
  {
   "id": "2026-11-11|Aturan Eliz|MSTRB",
