@@ -289,13 +289,26 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "TP",
+  "R": 2,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 9,
   "prev": "be8e64bb3cca108c8482",
-  "h": "a78d76e7f055a8215b6b"
+  "h": "a78d76e7f055a8215b6b",
+  "tx": 1794664800000,
+  "bm": {
+   "e": 122.05,
+   "h": "TP",
+   "R": 2,
+   "tx": 1794668400000
+  },
+  "bi": {
+   "e": 122.05,
+   "h": "SL",
+   "R": -1,
+   "tx": 1794492000000
+  }
  },
  {
   "id": "2026-11-13|Aturan Eliz|LINK",
