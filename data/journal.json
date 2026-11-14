@@ -230,13 +230,26 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "tidak terisi",
+  "R": 0,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 7,
   "prev": "8a12bb9445a1a7eff138",
-  "h": "f19a6326f02630a4ec3f"
+  "h": "f19a6326f02630a4ec3f",
+  "tx": 1794620858641,
+  "bm": {
+   "e": 73833.22,
+   "h": "TP",
+   "R": 2,
+   "tx": 1794538800000
+  },
+  "bi": {
+   "e": 73833.22,
+   "h": "SL",
+   "R": -1,
+   "tx": 1794492000000
+  }
  },
  {
   "id": "2026-11-11|Aturan Eliz|ADA",
@@ -352,5 +365,51 @@
   "seq": 12,
   "prev": "df3ce52b9e6c3164f87c",
   "h": "1d869a16e27b5a7c5b5b"
+ },
+ {
+  "id": "2026-11-14|Aturan Eliz|LINK",
+  "waktu": "2026-11-14 04:04 UTC",
+  "t": 1794629081863,
+  "due": 1795233881863,
+  "agen": "Aturan Eliz",
+  "aset": "LINK",
+  "arah": "SHORT",
+  "entry": 10.13,
+  "sl": 10.884,
+  "tp": 8.6217,
+  "harga_awal": 9.858,
+  "keyakinan": "",
+  "alasan": "breakdown ber-close, retest, searah tren",
+  "alert": "",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 13,
+  "prev": "1d869a16e27b5a7c5b5b",
+  "h": "98fe3f4df9239ea4c05a"
+ },
+ {
+  "id": "2026-11-14|Aturan Eliz|ADA",
+  "waktu": "2026-11-14 04:04 UTC",
+  "t": 1794629081971,
+  "due": 1795233881971,
+  "agen": "Aturan Eliz",
+  "aset": "ADA",
+  "arah": "SHORT",
+  "entry": 0.1714,
+  "sl": 0.18422,
+  "tp": 0.14577,
+  "harga_awal": 0.1686,
+  "keyakinan": "",
+  "alasan": "breakdown ber-close, retest, searah tren",
+  "alert": "",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 14,
+  "prev": "98fe3f4df9239ea4c05a",
+  "h": "3e0e31f7c59a41b8301a"
  }
 ]
