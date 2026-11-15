@@ -437,5 +437,28 @@
   "seq": 14,
   "prev": "98fe3f4df9239ea4c05a",
   "h": "3e0e31f7c59a41b8301a"
+ },
+ {
+  "id": "2026-11-15|Aturan Eliz|XAUT",
+  "waktu": "2026-11-15 03:50 UTC",
+  "t": 1794714632822,
+  "due": 1795319432822,
+  "agen": "Aturan Eliz",
+  "aset": "XAUT",
+  "arah": "SHORT",
+  "entry": 3873.8,
+  "sl": 4145.6,
+  "tp": 3330,
+  "harga_awal": 3802.98,
+  "keyakinan": "",
+  "alasan": "breakdown ber-close, retest, searah tren",
+  "alert": "Menjelang penutupan weekly (Senin 00:00 UTC).",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 15,
+  "prev": "3e0e31f7c59a41b8301a",
+  "h": "0cf09cd3aea25ae9477c"
  }
 ]
