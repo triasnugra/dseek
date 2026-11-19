@@ -524,5 +524,28 @@
   "seq": 16,
   "prev": "0cf09cd3aea25ae9477c",
   "h": "0bdfb21820fdf7759107"
+ },
+ {
+  "id": "2026-11-19|Aturan Eliz|AVAX",
+  "waktu": "2026-11-19 04:26 UTC",
+  "t": 1795062370082,
+  "due": 1795667170082,
+  "agen": "Aturan Eliz",
+  "aset": "AVAX",
+  "arah": "LONG",
+  "entry": 7.033,
+  "sl": 6.822,
+  "tp": 7.455,
+  "harga_awal": 7.034,
+  "keyakinan": "",
+  "alasan": "Double Deviation: sweep ke-2 lebih dangkal, tekanan jual melemah, sweep Monday Low lalu reclaim, OBV divergence, RSI divergence",
+  "alert": "",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 17,
+  "prev": "0bdfb21820fdf7759107",
+  "h": "18a4fed9e4e11dfbeb75"
  }
 ]
