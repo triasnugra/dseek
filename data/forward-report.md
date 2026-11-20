@@ -2,11 +2,11 @@
 
 - Mulai: 2026-10-29T10:29:21.715Z | agen: Aturan Eliz | mesin terkunci: 1eea4198621d8ad0
 - Integritas jurnal: OK (20 baris tersegel, ujung rantai eaac8b48d0220a5d6541)
-- Tercatat sesuai protokol: 16 (selesai 12, menunggu 4, dilewati dedupe 4)
+- Tercatat sesuai protokol: 16 (selesai 13, menunggu 3, dilewati dedupe 4)
 
 ## Kemajuan menuju evaluasi
 
-- Trade terisi: 8 dari 150
-- Minggu berbeda: 3 dari 20
+- Trade terisi: 9 dari 150
+- Minggu berbeda: 4 dari 20
 
 **BELUM BOLEH DIEVALUASI.** Angka kinerja sengaja disembunyikan sampai kedua syarat terpenuhi. Melihat hasil di tengah jalan lalu mengubah aturan adalah cara paling umum untuk merusak uji ini.

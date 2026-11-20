@@ -477,7 +477,19 @@
   "seq": 14,
   "prev": "98fe3f4df9239ea4c05a",
   "h": "3e0e31f7c59a41b8301a",
-  "tx": 1794888281971
+  "tx": 1794888281971,
+  "bm": {
+   "e": 0.1637,
+   "h": "TP",
+   "R": 2,
+   "tx": 1795201200000
+  },
+  "bi": {
+   "e": 0.1637,
+   "h": "SL",
+   "R": -1,
+   "tx": 1794686400000
+  }
  },
  {
   "id": "2026-11-15|Aturan Eliz|XAUT",
@@ -517,13 +529,14 @@
   "keyakinan": "",
   "alasan": "deviasi bawah lalu recovery, OBV divergence, RSI divergence",
   "alert": "Senin: Monday range sedang terbentuk, harga cenderung kotor. Tunggu. Monday Low/High jadi level kunci minggu ini.",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "SL",
+  "R": -1,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 16,
   "prev": "0cf09cd3aea25ae9477c",
-  "h": "0bdfb21820fdf7759107"
+  "h": "0bdfb21820fdf7759107",
+  "tx": 1795186800000
  },
  {
   "id": "2026-11-19|Aturan Eliz|AVAX",
@@ -547,7 +560,19 @@
   "seq": 17,
   "prev": "0bdfb21820fdf7759107",
   "h": "18a4fed9e4e11dfbeb75",
-  "tx": 1795147200000
+  "tx": 1795147200000,
+  "bm": {
+   "e": 7.069,
+   "h": "SL",
+   "R": -1,
+   "tx": 1795136400000
+  },
+  "bi": {
+   "e": 7.069,
+   "h": "TP",
+   "R": 2,
+   "tx": 1795186800000
+  }
  },
  {
   "id": "2026-11-20|Aturan Eliz|AVAX",
@@ -564,13 +589,26 @@
   "keyakinan": "",
   "alasan": "deviasi bawah lalu recovery, OBV divergence, RSI divergence",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "SL",
+  "R": -1,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 18,
   "prev": "18a4fed9e4e11dfbeb75",
-  "h": "2b7e0099d0bd8615bd1c"
+  "h": "2b7e0099d0bd8615bd1c",
+  "tx": 1795186800000,
+  "bm": {
+   "e": 6.896,
+   "h": "SL",
+   "R": -1,
+   "tx": 1795186800000
+  },
+  "bi": {
+   "e": 6.896,
+   "h": "TP",
+   "R": 2,
+   "tx": 1795186800000
+  }
  },
  {
   "id": "2026-11-20|Aturan Eliz|BTC",
