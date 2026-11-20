@@ -540,13 +540,14 @@
   "keyakinan": "",
   "alasan": "Double Deviation: sweep ke-2 lebih dangkal, tekanan jual melemah, sweep Monday Low lalu reclaim, OBV divergence, RSI divergence",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "SL",
+  "R": -1,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 17,
   "prev": "0bdfb21820fdf7759107",
-  "h": "18a4fed9e4e11dfbeb75"
+  "h": "18a4fed9e4e11dfbeb75",
+  "tx": 1795147200000
  },
  {
   "id": "2026-11-20|Aturan Eliz|AVAX",
