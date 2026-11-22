@@ -518,13 +518,26 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "Menjelang penutupan weekly (Senin 00:00 UTC).",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "kedaluwarsa",
+  "R": 1.22,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 15,
   "prev": "3e0e31f7c59a41b8301a",
-  "h": "0cf09cd3aea25ae9477c"
+  "h": "0cf09cd3aea25ae9477c",
+  "tx": 1795319432822,
+  "bm": {
+   "e": 3824.01,
+   "h": "kedaluwarsa",
+   "R": 1.035,
+   "tx": 1795319432822
+  },
+  "bi": {
+   "e": 3824.01,
+   "h": "SL",
+   "R": -1,
+   "tx": 1795136400000
+  }
  },
  {
   "id": "2026-11-16|Aturan Eliz|AVAX",
