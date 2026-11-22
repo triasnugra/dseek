@@ -679,5 +679,28 @@
   "seq": 20,
   "prev": "9c2985010d1ae7646345",
   "h": "eaac8b48d0220a5d6541"
+ },
+ {
+  "id": "2026-11-22|Aturan Eliz|BTC",
+  "waktu": "2026-11-22 01:48 UTC",
+  "t": 1795312114792,
+  "due": 1795916914792,
+  "agen": "Aturan Eliz",
+  "aset": "BTC",
+  "arah": "SHORT",
+  "entry": 62006,
+  "sl": 65774,
+  "tp": 54470,
+  "harga_awal": 60215.78,
+  "keyakinan": "",
+  "alasan": "breakdown ber-close, retest, searah tren",
+  "alert": "Menjelang penutupan weekly (Senin 00:00 UTC).",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 21,
+  "prev": "eaac8b48d0220a5d6541",
+  "h": "5c227cd46187ffada711"
  }
 ]
