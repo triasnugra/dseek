@@ -662,13 +662,26 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "tidak terisi",
+  "R": 0,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 19,
   "prev": "2b7e0099d0bd8615bd1c",
-  "h": "9c2985010d1ae7646345"
+  "h": "9c2985010d1ae7646345",
+  "tx": 1795405257325,
+  "bm": {
+   "e": 62034,
+   "h": "TP",
+   "R": 2,
+   "tx": 1795233600000
+  },
+  "bi": {
+   "e": 62034,
+   "h": "SL",
+   "R": -1,
+   "tx": 1795190400000
+  }
  },
  {
   "id": "2026-11-20|Aturan Eliz|LTC",
@@ -685,13 +698,14 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "tidak terisi",
+  "R": 0,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 20,
   "prev": "9c2985010d1ae7646345",
-  "h": "eaac8b48d0220a5d6541"
+  "h": "eaac8b48d0220a5d6541",
+  "tx": 1795405257434
  },
  {
   "id": "2026-11-22|Aturan Eliz|BTC",
