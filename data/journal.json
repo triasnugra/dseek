@@ -844,5 +844,28 @@
   "seq": 26,
   "prev": "dedf888aca37c1288390",
   "h": "3c354abc38cf85fdf60f"
+ },
+ {
+  "id": "2026-11-26|Aturan Eliz|TRX",
+  "waktu": "2026-11-26 02:24 UTC",
+  "t": 1795659848793,
+  "due": 1796264648793,
+  "agen": "Aturan Eliz",
+  "aset": "TRX",
+  "arah": "SHORT",
+  "entry": 0.30905,
+  "sl": 0.31833,
+  "tp": 0.29051,
+  "harga_awal": 0.304,
+  "keyakinan": "",
+  "alasan": "Wolf: breakout trendline gagal",
+  "alert": "",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 27,
+  "prev": "3c354abc38cf85fdf60f",
+  "h": "5781c4a717ba38a00ef7"
  }
 ]
