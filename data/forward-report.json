@@ -1,5 +1,5 @@
 {
- "dibuat": "2026-11-27T03:10:46.845Z",
+ "dibuat": "2026-11-27T12:59:47.872Z",
  "chain": {
   "ok": true,
   "n": 27,
@@ -16,8 +16,8 @@
  "peek": false,
  "counts": {
   "tercatat_sesuai_protokol": 22,
-  "selesai": 16,
-  "menunggu": 6,
+  "selesai": 20,
+  "menunggu": 2,
   "terisi": 10,
   "minggu_berbeda": 4,
   "diabaikan_mesin_lain": 0,

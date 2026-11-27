@@ -757,13 +757,14 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, OBV divergence, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "tidak terisi",
+  "R": 0,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 22,
   "prev": "5c227cd46187ffada711",
-  "h": "0ce15a58e34840609df4"
+  "h": "0ce15a58e34840609df4",
+  "tx": 1795753439817
  },
  {
   "id": "2026-11-24|Aturan Eliz|BTC",
@@ -780,13 +781,14 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "tidak terisi",
+  "R": 0,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 23,
   "prev": "0ce15a58e34840609df4",
-  "h": "290e6ea696271834264a"
+  "h": "290e6ea696271834264a",
+  "tx": 1795753439977
  },
  {
   "id": "2026-11-24|Aturan Eliz|BNB",
@@ -803,13 +805,14 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "tidak terisi",
+  "R": 0,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 24,
   "prev": "290e6ea696271834264a",
-  "h": "a2dd8e118b90beac46f0"
+  "h": "a2dd8e118b90beac46f0",
+  "tx": 1795753440137
  },
  {
   "id": "2026-11-24|Aturan Eliz|CRCLB",
@@ -826,13 +829,14 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "tidak terisi",
+  "R": 0,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 25,
   "prev": "a2dd8e118b90beac46f0",
-  "h": "dedf888aca37c1288390"
+  "h": "dedf888aca37c1288390",
+  "tx": 1795753440296
  },
  {
   "id": "2026-11-24|Aturan Eliz|LTC",

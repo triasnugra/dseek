@@ -2,7 +2,7 @@
 
 - Mulai: 2026-10-29T10:29:21.715Z | agen: Aturan Eliz | mesin terkunci: 1eea4198621d8ad0
 - Integritas jurnal: OK (27 baris tersegel, ujung rantai 5781c4a717ba38a00ef7)
-- Tercatat sesuai protokol: 22 (selesai 16, menunggu 6, dilewati dedupe 5)
+- Tercatat sesuai protokol: 22 (selesai 20, menunggu 2, dilewati dedupe 5)
 
 ## Kemajuan menuju evaluasi
 
