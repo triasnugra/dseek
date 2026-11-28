@@ -853,13 +853,14 @@
   "keyakinan": "",
   "alasan": "breakdown ber-close, retest, searah tren",
   "alert": "",
-  "hasil": "menunggu",
-  "R": "",
+  "hasil": "SL",
+  "R": -1,
   "engine": "1eea4198621d8ad0",
   "fwd": 1,
   "seq": 26,
   "prev": "dedf888aca37c1288390",
-  "h": "3c354abc38cf85fdf60f"
+  "h": "3c354abc38cf85fdf60f",
+  "tx": 1795820400000
  },
  {
   "id": "2026-11-26|Aturan Eliz|TRX",
@@ -883,5 +884,28 @@
   "seq": 27,
   "prev": "3c354abc38cf85fdf60f",
   "h": "5781c4a717ba38a00ef7"
+ },
+ {
+  "id": "2026-11-28|Aturan Eliz|BTC",
+  "waktu": "2026-11-28 03:48 UTC",
+  "t": 1795837712685,
+  "due": 1796442512685,
+  "agen": "Aturan Eliz",
+  "aset": "BTC",
+  "arah": "SHORT",
+  "entry": 60237,
+  "sl": 64926,
+  "tp": 50857,
+  "harga_awal": 59923.1,
+  "keyakinan": "",
+  "alasan": "Wolf: breakout trendline gagal, searah tren",
+  "alert": "",
+  "hasil": "menunggu",
+  "R": "",
+  "engine": "1eea4198621d8ad0",
+  "fwd": 1,
+  "seq": 28,
+  "prev": "5781c4a717ba38a00ef7",
+  "h": "e7914e7ea12581036d84"
  }
 ]
